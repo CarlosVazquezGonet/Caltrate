@@ -1,0 +1,206 @@
+@media only screen and (min-width: 600px) and (max-width: 800px){
+	body{
+	}
+
+	#wrapper{
+		width:100%;
+		min-height:1280px;
+		background-size:cover;
+	}
+	#wrapper header,
+	#wrapper div#container,
+	.content{
+		width:100%;
+		background-size:100%;
+		max-width:800px;
+		padding:0;
+		overflow: hidden;
+	}
+
+	.content{
+		height:830px;
+	}
+
+	#inicio{
+		background-size:100%;
+		padding:0;
+	}
+
+	.nav-holder{
+		left:10%;
+	}
+
+	footer{
+		width:100%;
+		margin:0;
+	}
+
+	
+
+	#paso02-drag{
+		position:relative;
+		top:45px;
+	}
+
+
+	#paso02-drag{
+		margin:0 auto;
+		left:0;
+		top:110px;
+	}
+	
+	#paso03 p.note {
+	    margin: 0 0 15px;
+	    font-size: 1em;
+	    color: #CFBFD1;
+	    text-align: center;
+	}
+	#paso02-info p.note{
+		position:relative;
+		top:150px;
+	}
+	#resultados .info-holder {
+	    position: relative;
+	    top: -15px;
+	    float: right;
+	    width: 60%;
+	    margin-right: 10px;
+	}
+	#resultados-silueta {
+	    float: left;
+	    position: relative;
+	    padding: 30px 0 0 156px;
+	    width: 133px;
+	    height: 400px;
+	}
+
+	#resultados h2{
+		padding-left:80px;
+	}
+
+	#ending{
+
+	}
+
+	#ending .info img{
+		margin:0 auto!important;
+		width:100%;
+		height:auto;
+	}
+	#paso03-silueta-holder {
+	    padding: 20px 0 0 156px;
+	    width: 133px;
+	    height: 400px;
+	    float: left;
+	    position: relative;
+	}
+	#paso03-icons {
+	    float: left;
+	    width: 310px;
+	    padding: 15px 14px 20px;
+	    margin: 0 0 6px 60px;
+	    background-color: rgba(0, 0, 0, 0.8);
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px;
+	    -moz-border-radius: 5px;
+	}
+	.resultado_lightbox .close {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 187px;
+    right: 7px;
+    background: url(../images/btn-resultados-close.png) no-repeat;
+	}
+
+}
+
+ @media only screen and (max-width:600px){
+ 	#wrapper{
+ 		min-height:1024px;
+ 	}
+	#wrapper header,
+	#wrapper div#container,
+	.content{
+		width:100%;
+		max-width:600px;
+	}
+
+	#inicio h2 {
+		font-size:3.3em;
+	}
+	#paso02-info p {
+	    margin-top: 20px;
+	    padding: 0 20px;
+	}
+	
+	#sexo-comenzar{
+		margin:0;
+	}
+	.nav-holder {
+	    left: 0;
+	    margin: 0;
+	    bottom:125px;
+	}
+	#paso02 .nav-holder{
+		bottom:88px;
+	}
+
+	.nav-holder a.back.nav{
+		left:10px;
+	}
+	.nav-holder a.next.nav{
+		right:12px;
+	}
+
+	.col-left.food-container{margin-left:10px;}
+	.col-right.food-container{margin-right:10px;}
+	#paso03-silueta-holder {
+	    padding: 20px 0 0 56px;
+	    width: 133px;
+	    height: 400px;
+	    float: left;
+	    position: relative;
+	}
+	#paso03-icons {
+	    float: left;
+	    width: 310px;
+	    padding: 15px 14px 20px;
+	    margin: 0 0 6px 20px;
+	    background-color: rgba(0, 0, 0, 0.8);
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px;
+	    -moz-border-radius: 5px;
+	}
+	#resultados-silueta {
+	    float: left;
+	    position: relative;
+	    padding: 24px 0 0 76px;
+	    width: 63px;
+	    height: 400px;
+	}
+
+	#paso03 #resultados-silueta {
+	    float: left;
+	    position: relative;
+	    padding: 48px 0 0 56px;
+	    width: 133px;
+	    height: 400px;
+		}
+	#resultado_lightbox{}
+	#resultado_lightbox img{
+		width:100%;
+		height:auto;
+	}
+	.resultado_lightbox .close {
+	    display: block;
+	    width: 30px;
+	    height: 30px;
+	    position: absolute;
+	    top: 137px;
+	    right: 7px;
+	    background: url(../images/btn-resultados-close.png) no-repeat;
+		}
+
+}

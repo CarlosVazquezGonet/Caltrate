@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html manifest="caltrate.manifest">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+    <title>Caltrate</title>
+	
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' type='text/css' />
+    <link rel='stylesheet' href='css/jquery.jscrollpane.css' type='text/css' />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, handheld" />
+	<link rel="stylesheet" href="css/drag.css" type="text/css" media="screen, handheld" />
+    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen, handheld" />
+	
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.easing-min.js" type="text/javascript"></script>
+	<script src="js/jquery.mousewheel-min.js" type="text/javascript"></script>
+	<script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+	<script src="js/jquery-css-transform-min.js" type="text/javascript"></script>
+	<script src="js/jquery-animate-css-rotate-scale-min.js" type="text/javascript"></script>
+	<script src="js/underscore-min.js" type="text/javascript"></script>
+	<script src="js/backbone-min.js" type="text/javascript"></script>
+    <script src="js/iscroll-min.js?v4" type="text/javascript"></script>
+	<script src="js/drag-min.js" type="text/javascript"></script>
+	<script src="js/application-min.js" type="text/javascript"></script>
+    <script src="js/mobile.js" type="text/javascript"></script>
+    <!--[if IE]>
+		<style>
+        	body{
+				text-shadow: none;            
+            }
+        </style>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+    
+    	<!-- HEADER -->
+		<header>
+			<h1 class="title"><a href="#/seccion/inicio">Caltrate</a></h1>
+		</header>
+        
+ 		<!-- MAIN HOLDER -->
+		<div id="container">
+        
+        	<!-- SLIDER HOLDER -->
+            <div id="slider_holder">
+        
+                <!-- INICIO -->
+                <div id="inicio" class="content">
+                    <h2 id="inicio-frase">&iquest;Sabes si consumes la <br />
+                    cantidad de calcio que <br />
+                    necesitas?</h2>
+                    <div id="inicio-calcular" class="nav-holder">
+                        <a href="#/seccion/sexo" class="nav next">Calcular Calcio</a>
+                    </div>
+                    
+                </div>
+                <!-- /INICIO -->
+                
+                
+                
+                <!-- SEXO -->
+                <div id="sexo" class="content hidden">
+                    <p class="webfont head">¿Sabías que la ingesta diaria recomendada de calcio<br/>
+                    es entre 1000 mg y 1200 mg?*</p>
+                    
+                    <div id="sexo-seleccionar">
+                        <div id="sexo-fem" class="silueta"><img src="images/sexo-femenino.png" alt="Femenino" /></div>
+                        <div id="sexo-masc" class="silueta"><img src="images/sexo-masculino.png" alt="Masculino" /></div>
+                    </div>
+                    
+                    
+                    <div class="age_holder">
+                        <label for="edad">Edad:</label>
+                        <select id="edad" name="edad">
+                            <option value="">Elige una opción</option>
+                            <option value="20-30">20-30</option>
+                            <option value="30-40">30-40</option>
+                            <option value="40-50">40-50</option>
+                            <option value="50-60">50-60</option>
+                            <option value="60+">60 en adelante</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Nav Buttons -->
+                    <div id="sexo-comenzar" class="nav-holder">
+                        <a href="#/seccion/inicio" class="back nav hdn">Regresar</a>
+                        <a href="#/seccion/paso02" class="next nav hdn">Comenzar</a>
+                    </div>
+                    <!-- /Nav Buttons -->
+                </div>
+                <!-- /SEXO -->
+                
+                
+                
+                <!-- DRAG N' DROP -->
+                <div id="paso02" class="content hidden">
+                    <div id="paso02-info">
+                    
+                        <p class="webfont head" style="font-size: 1.55em;">Selecciona las principales categorías de comida y elige de la lista los alimentos que consumes durante el día.</p>
+                        
+                        <div id="paso02-drag">
+                            <!-- Tabla Nutricional -->
+                            <div id="tooltip" class="">
+                                <div class="icon"></div>
+                                <div class="nombre"></div>
+                                <div class="wrap">
+                                    <div class="aporte">%</div>
+                                    <div class="porciones">#</div>
+                                </div>
+                            </div>
+                            <!-- /Tabla Nutricional -->
+                        
+                            <!-- Siluetas -->
+                            <div id="drop-fem" class="dropZone">
+                                <div class="slideFill"></div>
+                                <div class="hoverFill"></div>
+                                <div class="display">0%</div>
+                                <div class="mask"></div>
+                            </div>
+                            <div id="drop-masc" class="dropZone">
+                                <div class="slideFill"></div>
+                                <div class="hoverFill"></div>
+                                <div class="display">0%</div>
+                                <div class="mask"></div>
+                            </div>
+                            <!-- /Siluetas -->
+                                        
+                                        
+                            <!-- Vertical Scrollbar -->
+                            <div class="myScrollBarV">
+                                <div></div>
+                            </div>
+                            <!-- /Vertical Scrollbar -->
+                            
+                            <!-- Icons LEFT -->
+                            <div class="col-left food-container">
+                                <!-- Slider -->
+                                <div class="alimentos-slider">
+                                    <!-- Submenú -->
+                                    <ul class="alimentos-menu">
+                                        <li class="desayuno">
+                                        	<h2><a href="#/alimentos/desayuno">Desayuno</a></h2>
+                                            <img src="images/TEMP-desayuno.png" width="194" height="126" alt="Desayuno" />
+                                        </li>
+                                        <li class="comida">
+                                        	<h2><a href="#/alimentos/comida">Comida</a></h2>
+                                            <img src="images/TEMP-comida.png" width="195" height="114" alt="Comida" />
+                                        </li>
+                                    </ul>
+                                
+                                
+                                	<!-- Categorías -->
+                                	<div id="desayuno" class="cat-container">
+                                    	<!-- Back Button -->
+                            			<a href="#/alimentos/menu/desayuno" class="backBtn">Desayuno</a>
+                                        
+                                    	<!-- Table names -->
+                                    	<div class="table-names">
+                                        	<div class="table">
+                                                <div class="name">Alimento</div>
+                                                <div class="porcion">Porciones</div>
+                                                <div class="calcio">Calcio</div>
+                                                <div class="calorias">Kcal.</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Scroller -->
+                                        <div id="desayuno-scroller" class="iscroller scroll-pane jspScrollable">
+                                        	<div class="wrapper ">
+                                            	<h3>Frutas</h3>
+                                                <ul class="grupo frutas">
+                                                    <li class="alimento naranja still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Naranja</div>
+                                                            <div class="porcion">1 naranja (160g)</div>
+                                                            <div class="calcio">75</div>
+                                                            <div class="calorias">48</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento toronja still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Toronja</div>
+                                                            <div class="porcion">100g</div>
+                                                            <div class="calcio">29</div>
+                                                            <div class="calorias">42</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento papaya still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Papaya</div>
+                                                            <div class="porcion">100g</div>
+                                                            <div class="calcio">16</div>
+                                                            <div class="calorias">39</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sandia still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sandía</div>
+                                                            <div class="porcion">1 taza (160g)</div>
+                                                            <div class="calcio">12.8</div>
+                                                            <div class="calorias">48</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                <h3>Plato Principal</h3>
+                                                <ul class="grupo plato">
+                                                    <li class="alimento huevo still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Huevo</div>
+                                                            <div class="porcion">1 pieza (50g)</div>
+                                                            <div class="calcio">23</div>
+                                                            <div class="calorias">63</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento jamon still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Jamón</div>
+                                                            <div class="porcion">2 rebanadas (42g)</div>
+                                                            <div class="calcio">3</div>
+                                                            <div class="calorias">56</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sandwich still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sándwich de Jamón</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">221.8</div>
+                                                            <div class="calorias">250.4</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento tocino still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Tocino</div>
+                                                            <div class="porcion">1 rebanada (8g)</div>
+                                                            <div class="calcio">0.6</div>
+                                                            <div class="calorias">44</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento chilaquiles still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Chilaquiles</div>
+                                                            <div class="porcion">1 taza</div>
+                                                            <div class="calcio">308.8</div>
+                                                            <div class="calorias">379</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento enchiladas still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Enchiladas</div>
+                                                            <div class="porcion">2 piezas</div>
+                                                            <div class="calcio">312.4</div>
+                                                            <div class="calorias">447</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sopes still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sopes</div>
+                                                            <div class="porcion">2 piezas chicas</div>
+                                                            <div class="calcio">265.4</div>
+                                                            <div class="calorias">256.5</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento waffles still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Waffles</div>
+                                                            <div class="porcion">1 pieza (33g)</div>
+                                                            <div class="calcio">77</div>
+                                                            <div class="calorias">87</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento waffles still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Hot Cakes</div>
+                                                            <div class="porcion">3/4 pieza (38g)</div>
+                                                            <div class="calcio">81.9</div>
+                                                            <div class="calorias">69</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento salchichas still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Salchichas</div>
+                                                            <div class="porcion">3/4 pieza (34g)</div>
+                                                            <div class="calcio">4.4</div>
+                                                            <div class="calorias">114</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento cereal still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Cereal</div>
+                                                            <div class="porcion">3/4 taza</div>
+                                                            <div class="calcio">120</div>
+                                                            <div class="calorias">112</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                
+                                                
+                                                <h3>Bebidas</h3>
+                                                <ul class="grupo bebidas">
+                                                    <li class="alimento jugo still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Jugo de Naranja</div>
+                                                            <div class="porcion">Embotellado</div>
+                                                            <div class="calcio">8</div>
+                                                            <div class="calorias">43</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    
+                                                    <li class="alimento leche still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Leche Entera</div>
+                                                            <div class="porcion">1 taza</div>
+                                                            <div class="calcio">286.2</div>
+                                                            <div class="calorias">148</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento leche still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Leche Descremada</div>
+                                                            <div class="porcion">1 taza</div>
+                                                            <div class="calcio">302</div>
+                                                            <div class="calorias">86</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento leche still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Leche Semi-descremada</div>
+                                                            <div class="porcion">1 taza</div>
+                                                            <div class="calcio">284</div>
+                                                            <div class="calorias">116</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento leche still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Leche de Soya</div>
+                                                            <div class="porcion">1 taza</div>
+                                                            <div class="calcio">10</div>
+                                                            <div class="calorias">79</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento leche still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Leche con Chocolate</div>
+                                                            <div class="porcion">1 taza</div>
+                                                            <div class="calcio">268.8</div>
+                                                            <div class="calorias">200</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento leche still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Café</div>
+                                                            <div class="porcion">1 taza</div>
+                                                            <div class="calcio">0</div>
+                                                            <div class="calorias">5</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                <h3>Otros</h3>
+                                                <ul class="grupo otros">
+                                                	<li class="alimento yogurt still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Yogurt Light c/ Frutas</div>
+                                                            <div class="porcion">3/4 taza (180g)</div>
+                                                            <div class="calcio">211.8	</div>
+                                                            <div class="calorias">95</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento yogurt still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Yogurt Natural</div>
+                                                            <div class="porcion">1 taza (227g)</div>
+                                                            <div class="calcio">274</div>
+                                                            <div class="calorias">139</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento yogurt still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Crema</div>
+                                                            <div class="porcion">1 cuchara (15g)</div>
+                                                            <div class="calcio">13</div>
+                                                            <div class="calorias">43</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Cottage</div>
+                                                            <div class="porcion">3 cucharadas (48g)</div>
+                                                            <div class="calcio">32.9</div>
+                                                            <div class="calorias">43</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento concha still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Concha (Pan Dulce)</div>
+                                                            <div class="porcion">1/3 pieza (23g)</div>
+                                                            <div class="calcio">8.4</div>
+                                                            <div class="calorias">92</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento muffin still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Muffin</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">102</div>
+                                                            <div class="calorias">190</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento croissant still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Croissant</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">31.2</div>
+                                                            <div class="calorias">345</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pan still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pan Blanco</div>
+                                                            <div class="porcion">1 rebanada (27g)</div>
+                                                            <div class="calcio">101.3</div>
+                                                            <div class="calorias">71</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pan still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pan Integral</div>
+                                                            <div class="porcion">1 rebanada (25g)</div>
+                                                            <div class="calcio">78</div>
+                                                            <div class="calorias">67</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Cheddar</div>
+                                                            <div class="porcion">1 rebanada (28g)</div>
+                                                            <div class="calcio">202</div>
+                                                            <div class="calorias">113.3</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Camembert</div>
+                                                            <div class="porcion">1 rebanada (35g)</div>
+                                                            <div class="calcio">137.5</div>
+                                                            <div class="calorias">106</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Oaxaca</div>
+                                                            <div class="porcion">30g</div>
+                                                            <div class="calcio">140.7</div>
+                                                            <div class="calorias">95</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Mozzarella</div>
+                                                            <div class="porcion">35g</div>
+                                                            <div class="calcio">176.8</div>
+                                                            <div class="calorias">105</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                        	</div>
+                                    	</div>
+                                        <!-- /Scroller -->
+                                    </div>
+                                    <!-- /Desayuno -->
+                                    
+                                    
+                                    <!-- Comida -->
+                                    <div id="comida" class="cat-container">
+                                    	<!-- Back Button -->
+                            			<a href="#/alimentos/menu/comida" class="backBtn">Comida</a>
+                                        
+                                    	<!-- Table names -->
+                                    	<div class="table-names">
+                                        	<div class="table">
+                                                <div class="name">Alimento</div>
+                                                <div class="porcion">Porciones</div>
+                                                <div class="calcio">Calcio</div>
+                                                <div class="calorias">Kcal.</div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- Scroller -->
+                                        <div id="comida-scroller" class="iscroller scroll-pane jspScrollable">
+											<div class="wrapper">
+                                                <h3>Ensaladas y Verduras</h3>
+                                                <ul class="grupo ensaladas">
+                                                    <li class="alimento ensalada still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Ensalada Mixta</div>
+                                                            <div class="porcion">2 tazas</div>
+                                                            <div class="calcio">47</div>
+                                                            <div class="calorias">42.2</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento ensalada still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Ensalada de Lechuga</div>
+                                                            <div class="porcion">135g</div>
+                                                            <div class="calcio">21.6</div>
+                                                            <div class="calorias">18.9</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento brocoli still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Brócoli Cocido</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">44</div>
+                                                            <div class="calorias">34</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento berros still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Berros</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">59</div>
+                                                            <div class="calorias">11</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento col still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Col Morada</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">31</div>
+                                                            <div class="calorias">33</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento espinaca still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Espinacas Cocidas</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">66</div>
+                                                            <div class="calorias">23</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento apio still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Apio</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">52</div>
+                                                            <div class="calorias">16</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento calabacita still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Calabacita Criolla</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">14</div>
+                                                            <div class="calorias">26</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                   <li class="alimento betabel still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Betabel Crudo</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">16</div>
+                                                            <div class="calorias">43</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li> 
+                                                    <li class="alimento acelga still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Acelgas Crudas</div>
+                                                            <div class="porcion">1 porción (100g)</div>
+                                                            <div class="calcio">67.5</div>
+                                                            <div class="calorias">19</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                <h3>Plato Fuerte</h3>
+                                                <ul class="grupo plato">
+                                                    <li class="alimento pollo still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pollo</div>
+                                                            <div class="porcion">1/3 pieza (32g)</div>
+                                                            <div class="calcio">3.2</div>
+                                                            <div class="calorias">68</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento carne still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Carne de Res</div>
+                                                            <div class="porcion">100g</div>
+                                                            <div class="calcio">12</div>
+                                                            <div class="calorias">180</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento chuleta still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Chuleta Ahumada</div>
+                                                            <div class="porcion">1/2 pieza</div>
+                                                            <div class="calcio">3</div>
+                                                            <div class="calorias">34</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento chuleta still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Atún Fresco</div>
+                                                            <div class="porcion">30g</div>
+                                                            <div class="calcio">2.5</div>
+                                                            <div class="calorias">43</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento chuleta still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Atún en Agua</div>
+                                                            <div class="porcion">30g (1/5 taza)</div>
+                                                            <div class="calcio">3.4</div>
+                                                            <div class="calorias">36</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento chuleta still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Atún en Aceite</div>
+                                                            <div class="porcion">25g</div>
+                                                            <div class="calcio">2.6</div>
+                                                            <div class="calorias">49</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento hamburguesa still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Hambur-<br/>guesa</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">110.8</div>
+                                                            <div class="calorias">617.7</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sardina still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sardinas en Aceite</div>
+                                                            <div class="porcion">3 piezas (36g)</div>
+                                                            <div class="calcio">137.5</div>
+                                                            <div class="calorias">75</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento camaron still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Camarones</div>
+                                                            <div class="porcion">5 piezas (34g)</div>
+                                                            <div class="calcio">13.3</div>
+                                                            <div class="calorias">34</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento salmon still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Salmón en Aceite</div>
+                                                            <div class="porcion">1 porción (35g)</div>
+                                                            <div class="calcio">27.7</div>
+                                                            <div class="calorias">71</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento ostiones still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Ostiones Crudos</div>
+                                                            <div class="porcion">1 porción (75g)</div>
+                                                            <div class="calcio">6.2</div>
+                                                            <div class="calorias">61</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pulpo still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pulpo</div>
+                                                            <div class="porcion">1 porción (25g)</div>
+                                                            <div class="calcio">26.5</div>
+                                                            <div class="calorias">41</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                <h3>Sopas, Arroz y Pasta</h3>
+                                                    <ul class="grupo sopas">
+                                                    <li class="alimento sopa still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sopa de Pasta</div>
+                                                            <div class="porcion">1/2 taza (60g)</div>
+                                                            <div class="calcio">6.3</div>
+                                                            <div class="calorias">78</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sopa still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sopa de Verdura</div>
+                                                            <div class="porcion">1/2 taza</div>
+                                                            <div class="calcio">15</div>
+                                                            <div class="calorias">41</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sopa still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sopa de Tortilla</div>
+                                                            <div class="porcion">1/2 taza</div>
+                                                            <div class="calcio">117.6</div>
+                                                            <div class="calorias">172</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sopa still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Consomé de Pollo</div>
+                                                            <div class="porcion">1/2 taza</div>
+                                                            <div class="calcio">0</div>
+                                                            <div class="calorias">20</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento arroz still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Arroz Blanco Hervido</div>
+                                                            <div class="porcion">1/4 taza (47g)</div>
+                                                            <div class="calcio">1.4</div>
+                                                            <div class="calorias">60</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento spaguetti still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pasta Cocida</div>
+                                                            <div class="porcion">1/2 taza (60g)</div>
+                                                            <div class="calcio">6.3</div>
+                                                            <div class="calorias">78</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                <h3 style="font-size: .95em">Postres</h3>
+                                                <ul class="grupo postres">
+                                                    <li class="alimento helado still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Helado de Vainilla</div>
+                                                            <div class="porcion">3/4 taza (99g)</div>
+                                                            <div class="calcio">126.7</div>
+                                                            <div class="calorias">199</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento flan still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Flan</div>
+                                                            <div class="porcion">1 envase (61g)</div>
+                                                            <div class="calcio">120</div>
+                                                            <div class="calorias">89</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento flan still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Gelatina</div>
+                                                            <div class="porcion">1/3 taza</div>
+                                                            <div class="calcio">0</div>
+                                                            <div class="calorias">37</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pastel still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pastel de Chocolate</div>
+                                                            <div class="porcion">1 rebanada (50.6g)</div>
+                                                            <div class="calcio">53.8</div>
+                                                            <div class="calorias">152</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                
+                                                <h3>Otros</h3>
+                                                <ul class="grupo otros">
+                                                	<li class="alimento still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Frijol Negro</div>
+                                                            <div class="porcion">100g</div>
+                                                            <div class="calcio">183</div>
+                                                            <div class="calorias">341</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Tortilla</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">58.8</div>
+                                                            <div class="calorias">64</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Manchego</div>
+                                                            <div class="porcion">1 rebanada (25g)</div>
+                                                            <div class="calcio">208.8</div>
+                                                            <div class="calorias">102</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Requesón</div>
+                                                            <div class="porcion">2 cucharadas (24g)</div>
+                                                            <div class="calcio">22.1</div>
+                                                            <div class="calorias">43</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                          </div>
+                                        </div>
+                                        <!-- /Scroller -->
+									</div>
+                                    <!-- /Comida -->
+                                </div>
+                                <!-- /Slider LEFT -->
+                            </div> 
+                            <!-- /Icons  LEFT -->
+                            
+                            
+                            
+                            <!-- Icons RIGHT -->
+                            <div class="col-right food-container">
+                            	<!-- Slider -->
+                                <div class="alimentos-slider">
+                                    <!-- Submenú -->
+                                    <ul class="alimentos-menu">
+                                        <li class="cena">
+                                        	<h2><a href="#/alimentos/cena">Cena</a></h2>
+                                            <img src="images/TEMP-cena.png" width="195" height="105" alt="Cena" />
+                                        </li>
+                                        <li class="snacks">
+                                        	<h2><a href="#/alimentos/snacks">Entrecomidas</a></h2>
+                                            <img src="images/TEMP-snacks.png" width="195" height="74" alt="Snacks" />
+                                        </li>
+                                    </ul>
+                                
+                                    
+                                    <!-- Cena -->
+                                    <div id="cena" class="cat-container">
+                                    	<!-- Back Button -->
+                            			<a href="#/alimentos/menu/cena" class="backBtn">Cena</a>
+                                        
+                                    	<!-- Table names -->
+                                    	<div class="table-names">
+                                        	<div class="table">
+                                                <div class="name">Alimento</div>
+                                                <div class="porcion">Porciones</div>
+                                                <div class="calcio">Calcio</div>
+                                                <div class="calorias">Kcal.</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Scroller -->
+                                        <div id="cena-scroller" class="iscroller scroll-pane jspScrollable">
+											<div class="wrapper">
+                                            	<h3>Pan</h3>
+                                                <ul class="grupo panes">
+                                                    <li class="alimento concha still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Concha (Pan Dulce)</div>
+                                                            <div class="porcion">1/3 pieza (23g)</div>
+                                                            <div class="calcio">8.4</div>
+                                                            <div class="calorias">92</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento muffin still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Muffin</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">102</div>
+                                                            <div class="calorias">190</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento croissant still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Croissant</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">31.2</div>
+                                                            <div class="calorias">345</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pan still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pan Blanco</div>
+                                                            <div class="porcion">1 rebanada (27g)</div>
+                                                            <div class="calcio">101.3</div>
+                                                            <div class="calorias">71</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pan still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pan Integral</div>
+                                                            <div class="porcion">1 rebanada (25g)</div>
+                                                            <div class="calcio">78</div>
+                                                            <div class="calorias">67</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                                
+                                                <h3>Plato Principal</h3>
+                                                <ul class="grupo plato">
+                                                    <li class="alimento sandwich still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sándwich de Jamón</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">221.8</div>
+                                                            <div class="calorias">250.4</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento quesadilla still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Quesadilla de Queso</div>
+                                                            <div class="porcion">1 pieza</div>
+                                                            <div class="calcio">129.2</div>
+                                                            <div class="calorias">111.5</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento tacos still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Tacos de Bistek</div>
+                                                            <div class="porcion">2 piezas</div>
+                                                            <div class="calcio">120.3</div>
+                                                            <div class="calorias">164</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento tacos still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Tacos al Pastor</div>
+                                                            <div class="porcion">2 piezas</div>
+                                                            <div class="calcio">120</div>
+                                                            <div class="calorias">184</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pizza still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Pizza</div>
+                                                            <div class="porcion">2 rebanadas</div>
+                                                            <div class="calcio">510</div>
+                                                            <div class="calorias">342.4</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento pizza still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Ensalada de Lechuga</div>
+                                                            <div class="porcion">135g</div>
+                                                            <div class="calcio">21.6</div>
+                                                            <div class="calorias">18.9</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento sushi still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Sushi</div>
+                                                            <div class="porcion">1/2 rollo (4 piezas)</div>
+                                                            <div class="calcio">9.1</div>
+                                                            <div class="calorias">276</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Cheddar</div>
+                                                            <div class="porcion">1 rebanada (28g)</div>
+                                                            <div class="calcio">202</div>
+                                                            <div class="calorias">113.3</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Camembert</div>
+                                                            <div class="porcion">1 rebanada (35g)</div>
+                                                            <div class="calcio">137.5</div>
+                                                            <div class="calorias">106</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Oaxaca</div>
+                                                            <div class="porcion">30g</div>
+                                                            <div class="calcio">140.7</div>
+                                                            <div class="calorias">95</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento queso still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Queso Mozzarella</div>
+                                                            <div class="porcion">35g</div>
+                                                            <div class="calcio">176.8</div>
+                                                            <div class="calorias">105</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento jamon still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Jamón</div>
+                                                            <div class="porcion">2 rebanadas (42g)</div>
+                                                            <div class="calcio">3</div>
+                                                            <div class="calorias">56</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+											</div>
+                                        </div>
+                                        <!-- /Scroller -->
+                                   </div> 
+                                   <!-- /Cena --> 
+                                    
+                                    
+                                    <!-- Snacks -->
+                                    <div id="snacks" class="cat-container">
+                                    	<!-- Back Button -->
+                            			<a href="#/alimentos/menu/snacks" class="backBtn">Entrecomidas</a>
+                                        
+                                    	<!-- Table names -->
+                                    	<div class="table-names">
+                                        	<div class="table">
+                                                <div class="name">Alimento</div>
+                                                <div class="porcion">Porciones</div>
+                                                <div class="calcio">Calcio</div>
+                                                <div class="calorias">Kcal.</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Scroller -->
+                                    	<div id="snacks-scroller" class="iscroller scroll-pane jspScrollable">
+                                        	<div class="wrapper">
+                                                <h3>Entrecomidas</h3>
+                                                <ul class="grupo">
+                                                    <li class="alimento nueces still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Nueces</div>
+                                                            <div class="porcion">12 mitades</div>
+                                                            <div class="calcio">34</div>
+                                                            <div class="calorias">134</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento almendras still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Almendras</div>
+                                                            <div class="porcion">12</div>
+                                                            <div class="calcio">62</div>
+                                                            <div class="calorias">79</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                    <li class="alimento almendras still">
+                                                        <div class="icon hdn"></div>
+                                                        <div class="table">
+                                                            <div class="name">Jícama</div>
+                                                            <div class="porcion">100g</div>
+                                                            <div class="calcio">20</div>
+                                                            <div class="calorias">38</div>
+                                                        </div>
+                                                        <div class="remove hdn">Remover</div><div class="counter">0</div>
+                                                    </li>
+                                                </ul>
+                                    		</div>
+                                        </div>
+                                        <!-- /Scroller -->
+                                    </div>
+                                    <!-- /Snacks -->
+                                </div>
+                                <!-- /Slider RIGHT -->
+                            </div>
+                            <!-- /Icons RIGHT -->
+                        </div>
+                            
+                        
+                        
+                        <!-- Note -->
+                        <p class="note" style="margin-top: -10px; text-align: center; font-size: .9em; color: #b2a4b3"><strong>NOTA:</strong> Cada alimento seleccionado representa una porción.</p>
+                        <!-- /Note -->
+                    </div>
+                    
+                    
+                    <!-- Nav Button -->
+                    <div class="nav-holder">
+                        <a href="#/seccion/sexo" class="back nav hdn">Regresar</a>
+                        <a href="#/seccion/paso03" class="next nav hdn">Continuar</a>
+                    </div>
+                    <!-- /Nav Button -->
+                </div>
+                <!--/ DRAG N' DROP -->
+                
+                
+                
+                <!-- FACTORES DE RIESGO -->
+                <div id="paso03" class="content hidden">
+                    <div id="paso03-info">
+                        <!-- <h2 class="title">Factores de Riesgo</h2> -->
+	                        <p class="webfont head" style="font-size: 1.55em;">Existen hábitos que pueden poner en riesgo <br/>la salud de tus huesos.<br/>
+	                        Dentro de los más comunes tenemos los siguientes:</p>
+                        
+                        <div id="paso03-graficos">
+                            <!-- Información sobre Factores de Riesgo -->
+                            <div id="factores-holder">
+                                <div class="alcohol window">
+                                    <div class="nombre">Alcohol</div>
+                                    <div class="icon"></div>
+                                    <div class="wrap">
+                                        <p>Cuanto más alcohol se ingiere, más se obstaculiza la capacidad del cuerpo para la formación <br/>y el mantenimiento de unos huesos sanos.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="cigarro window">
+                                    <div class="nombre">Tabaco</div>
+                                    <div class="icon"></div>
+                                    <div class="wrap">
+                                        <p>El tabaquismo aumenta el riesgo de fractura. Además, los fumadores usualmente <br/>
+                                        presentan menor densidad ósea aumentando el riesgo de sufrir osteoporosis.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="ejercicio window">
+                                    <div class="nombre">Ejercicio</div>
+                                    <div class="icon"></div>
+                                    <div class="wrap">
+                                        <p>El ejercicio no sólo es importante para la salud en general, también estimula la formación de los huesos.<br/>
+										Y se ha demostrado que una rutina de ejercicios periódica, ayuda a protegernos de la osteoporosis y de las fracturas relacionadas.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="cafe window">
+                                    <div class="nombre">Cafeína</div>
+                                    <div class="icon"></div>
+                                    <div class="wrap">
+                                        <p>Consumir diariamente 3 o más tazas de café puede acelerar la pérdida ósea.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Información sobre Factores de Riesgo -->
+                            
+                            
+                            <!-- Siluetas -->
+                            <div id="paso03-silueta-holder">
+                                <div id="factor-masc" class="factorZone">
+                                    <div class="slideFill"></div>
+                                    <div class="factorDisplay">
+                                        <div class="alcohol factorBar"></div>
+                                        <div class="cigarro factorBar"></div>
+                                        <div class="ejercicio factorBar"></div>
+                                        <div class="cafe factorBar"></div>
+                                    </div>
+                                    <div class="display">0%</div>
+                                    <div class="mask"></div>
+                                </div>
+                                <div id="factor-fem" class="factorZone">
+                                    <div class="slideFill"></div>
+                                    <div class="factorDisplay">
+                                        <div class="alcohol factorBar"></div>
+                                        <div class="cigarro factorBar"></div>
+                                        <div class="ejercicio factorBar"></div>
+                                        <div class="cafe factorBar"></div>
+                                    </div>
+                                    <div class="display">0%</div>
+                                    <div class="mask"></div>
+                                </div>
+                            </div>
+                            <!-- /Siluetas -->
+                            
+                            
+                            <!-- Iconos -->
+                            <div class="col-right">
+                                <!-- Note -->
+                                <p class="note">Haz <i>tap</i> en el icono correspondiente <br/>si presentas alguno de estos hábitos.</p>
+                                <!-- /Note -->
+                                
+                                <div id="paso03-icons">
+                                    <ul id="factores-riesgo">
+                                        <li id="riesgo01" class="factor">
+                                            <a class="info hdn">Más info</a>
+                                            ¿Bebes más de 10 copas de alcohol a la semana?
+                                        </li>
+                                        <li id="riesgo02" class="factor">
+                                            <a class="info hdn">Más info</a>
+                                            ¿Fumas?
+                                        </li>
+                                        <li id="riesgo03" class="factor">
+                                            <a class="info hdn">Más info</a>
+                                            ¿Llevas una vida sedentaria?
+                                        </li>
+                                        <li id="riesgo04" class="factor">
+                                            <a class="info hdn">Más info</a>
+                                            ¿Consumes café frecuentemente?
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <!-- /Iconos -->
+                        </div>
+                    </div>
+                   
+                   
+                   
+                    <!-- Nav Button -->
+                    <div class="nav-holder">
+                        <a href="#/seccion/paso02" class="back nav hdn">Regresar</a>
+                        <a href="#/seccion/resultados" class="next nav hdn">Resultados</a>
+                    </div>
+                    <!-- /Nav Button -->
+                </div>
+                <!-- /FACTORES DE RIESGO -->
+                
+                
+                
+                <!-- RESULTADOS -->
+                <div id="resultados" class="content hidden">
+                    <div id="resultados-info">
+                        <div id="resultados-graficos">
+                        	
+	                        <h2 class="title" style="text-align: left">RESULTADO</h2>
+                            
+                            
+                            <!-- CALTRATE 600 M -->
+                            <div id="prod_caltrateM" class="prod-container">
+	                            
+	                            <!-- Info -->
+	                            <div class="info-holder">
+	                                <div class="resultados-porcentajes">
+	                                    <p class="webfont" style="font-size: 1.5em; margin-bottom: 12px">
+	                                        Tu consumo diario de calcio es:
+	                                        <span class="percent">0%
+	                                            <span class="kcal"></span>
+	                                        </span>
+	                                        <span class="note">*de la ingesta diaria recomendada.</span>
+	                                    </p>
+	                                    
+	                                    <p class="webfont" style="font-size: 1.3em; border-bottom: solid 1px #fff; padding-bottom: 18px">Te recomendamos complementar tu dieta tomando de 1 a 2 tabletas al día.</p>
+	                                </div>
+	                                	                                
+	                            	<!-- Producto -->
+		                            <div class="resultados-producto hdn">Caltrate 600 M</div>
+		                            <!-- /Producto -->
+	                                
+	                                <a class="temp-resultdo hdn">Conoce más aquí</a>
+	                            </div>
+	                            <!-- /Info -->
+                            </div>
+                            
+                            
+                            
+                            <!-- CALTRATE 600 D -->
+                            <div id="prod_caltrateD" class="prod-container">
+	                            
+	                            <!-- Info -->
+	                            <div class="info-holder">
+	                                <div class="resultados-porcentajes">
+	                                    <p class="webfont" style="font-size: 1.5em; margin-bottom: 12px">
+	                                        Tu consumo diario de calcio es:
+	                                        <span class="percent">0%
+	                                            <span class="kcal"></span>
+	                                        </span>
+	                                        <span class="note">*de la ingesta diaria recomendada.</span>
+	                                    </p>
+	                                    
+	                                    <p class="webfont" style="font-size: 1.3em; border-bottom: solid 1px #fff; padding-bottom: 18px">Te recomendamos complementar tu dieta tomando de 1 a 2 tabletas al día.</p>
+	                                </div>
+	                                
+	                            	<!-- Producto -->
+		                            <div class="resultados-producto hdn">Caltrate 600 D</div>
+		                            <!-- /Producto -->
+	                                
+	                                <a class="temp-resultdo hdn">Conoce más aquí</a>
+	                            </div>
+	                            <!-- /Info -->
+                            </div>
+                            
+                            
+                            
+                            <!-- CALTRATE FAMILIA -->
+                            <div id="prod_caltratefamily" class="prod-container">
+                            		                            
+	                            <!-- Info -->
+	                            <div class="info-holder">
+	                                <div class="resultados-porcentajes">
+	                                    <p class="webfont" style="font-size: 1.5em; margin-bottom: 12px">
+	                                        Tu consumo diario de calcio es:
+	                                        <span class="percent">0%
+	                                            <span class="kcal"></span>
+	                                        </span>
+	                                        <span class="note">*de la ingesta diaria recomendada.</span>
+	                                    </p>
+	                                    
+	                                    <p class="webfont" style="font-size: 1.3em; border-bottom: solid 1px #fff; padding-bottom: 18px">Te recomendamos que sigas manteniendo esta dieta, con la cual estas consumiendo los niveles óptimos de calcio que tu cuerpo necesita.</p>
+	                                </div>
+	                                
+	                                <!-- Producto -->
+	                                <div class="resultados-producto hdn">Caltrate</div>
+	                                <!-- /Producto -->
+
+	                                
+	                                <a class="temp-resultdo hdn">Conoce más aquí</a>
+	                            </div>
+	                            <!-- /Info -->
+                            </div>
+                            
+                            
+                            <!-- Siluetas -->
+                            <div id="resultados-silueta">
+                                <div id="final-masc" class="factorZone">
+                                    <div class="slideFill"></div>
+                                    <div class="factorDisplay">
+                                        <div class="alcohol factorBar"></div>
+                                        <div class="cigarro factorBar"></div>
+                                        <div class="ejercicio factorBar"></div>
+                                        <div class="cafe factorBar"></div>
+                                    </div>
+                                    <div class="display">0%</div>
+                                    <div class="mask"></div>
+                                </div>
+                                <div id="final-fem" class="factorZone">
+                                    <div class="slideFill"></div>
+                                    <div class="factorDisplay">
+                                        <div class="alcohol factorBar"></div>
+                                        <div class="cigarro factorBar"></div>
+                                        <div class="ejercicio factorBar"></div>
+                                        <div class="cafe factorBar"></div>
+                                    </div>
+                                    <div class="display">0%</div>
+                                    <div class="mask"></div>
+                                </div>
+                            </div>
+                            <!-- /Siluetas -->
+
+                        </div>
+                    </div>
+                    
+                    <!-- Nav Button -->
+                    <div class="nav-holder">
+                    	<a href="#/seccion/paso03" class="back nav hdn">Regresar</a>
+                        <a href="#/seccion/ending" class="next nav hdn">Siguiente</a>
+                    </div>
+                    <!-- /Nav Button -->
+                </div>
+                <!-- /RESULTADOS -->
+                
+                
+                
+                
+                <!-- ENDING -->
+                <div id="ending" class="content hidden">
+                    <div class="info">
+                        <img src="images/ending-family.png" width="654" height="946" alt="Conoce a toda la familia Caltrate" class="" style="position: absolute; top: -145px; margin-left: -50px;"/>
+                    </div>
+                    
+                    <!-- Nav Button -->
+                    <div class="nav-holder">
+                    	<a href="#/seccion/resultados" class="back nav hdn">Regresar</a>
+                        <a href="#/inicio" class="next nav hdn">Reiniciar</a>
+                    </div>
+                    <!-- /Nav Button -->
+                </div>
+                <!-- /ENDING -->
+                
+                
+			
+        	</div>
+            <!-- /SLIDER HOLDER -->
+		</div>
+        <!-- /MAIN HOLDER -->
+        
+        
+        <!-- TEMP RESULTADOS LIGHTBOX -->
+        <div class="resultado_lightbox">
+        	<a class="close hdn">
+            	Cerrar
+            </a>
+        	<img src="images/TEMP-resultado.png" width="654" height="946" alt="" class="caltrateM prod-details" />
+        	<img src="images/TEMP-resultado2.png" width="654" height="946" alt="" class="caltrateD prod-details" />
+        </div>
+        <!-- /TEMP RESULTADOS LIGHTBOX -->
+        
+        
+        <!-- FOOTER -->
+		<footer>
+        	<div class="content-holder">
+                <div class="info factors">Los factores de riesgo se representan en esta herramienta únicamente de forma gráfica, pero no se conoce hasta el momento el tiempo de exposición y la cantidad a la que un individuo debe de exponerse a ellos para dar como resultado una disminución en la absorción o alteración en el metabolismo del calcio.</div>
+                
+                <div class="genero">
+                	<p>*Para adolescentes y adultos.</p>
+                </div>
+                
+                <div class="ending">
+                	<p class="note">*La ingesta diaria recomendada de calcio es de 1000mg  a 1200mg para adolescentes y adultos.</p>
+                	<p><strong>No exceda la dosis recomendada. Consulte a su médico.</strong></p>
+                </div>
+            </div>
+            
+			<div id="caltrate-url"><a href="http://www.caltrate.com.mx">www.caltrate.com.mx</a></div>
+			
+			<div class="reg-container">
+				<span class="caltrateM registro">Reg. No. 022V2000 SSA VI</span>
+				<span class="caltrateD registro">Reg. No. 103M98 SSA VI</span>
+				<span class="caltrateFamily registro">Reg. No. 022V2000 SSA VI, Reg. No. 103M98 SSA VI, Reg. No. 012M90 SSA VI</span>
+			</div>
+			
+		</footer>
+        <!-- /FOOTER -->
+	</div>
+</body>
+</html>

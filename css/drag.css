@@ -1,0 +1,893 @@
+.hdn{
+	font-size: 1px;
+	text-indent: -9999px; 
+}
+
+#container{
+	position: relative
+}
+
+
+
+
+
+
+/*------- Grupos de alimentos -----*/
+/* contenedores */
+.food-container{
+	width: 225px; 
+	/* padding: 15px 20px; */
+	height: 395px;
+	background: rgba(0, 0, 0, .4);
+	
+	border-radius: 14px;
+	-moz-border-radius: 14px;
+}
+.col-left{
+	float: left;
+}
+.col-right{
+	float: right;
+}
+
+.food-container h3{
+	display: block;
+	text-align: center;
+	margin: 0 0 15px; padding: 0; border: 0;
+}
+
+
+/* Back button */
+a.backBtn{
+	display: block;
+	padding: 7px 20px 4px;
+	
+	
+	color: #553101;
+	font-family: 'PT Sans Narrow', sans-serif; 
+	font-size: 1.32em;
+	text-shadow: 1px 1px 0px rgba(255, 229, 194, .3);
+	text-align: center;
+    /*filter: dropshadow(color=rgba(255, 229, 194, .3), offx=-1, offy=-1); */
+	
+	
+	background: #f9b61a url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat, url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZhZWE4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMlIiBzdG9wLWNvbG9yPSIjZjhkYjIwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNDklIiBzdG9wLWNvbG9yPSIjZWViNTI4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZjdhMDJlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UyODkxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat, -moz-linear-gradient(top,  #faea85 1%, #f8db20 3%, #eeb528 49%, #f7a02e 50%, #e28912 100%); /* FF3.6+ */
+	background: url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(1%,#faea85), color-stop(3%,#f8db20), color-stop(49%,#eeb528), color-stop(50%,#f7a02e), color-stop(100%,#e28912)); /* Chrome,Safari4+ */
+	background: url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat, -webkit-linear-gradient(top,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* Chrome10+,Safari5.1+ */
+	background: url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat, -o-linear-gradient(top,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* Opera 11.10+ */
+	background: url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat, -ms-linear-gradient(top,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* IE10+ */
+	background: url(../images/icon-arrow_brown_prev.png) 15px 12px no-repeat, linear-gradient(to bottom,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#faea85', endColorstr='#e28912',GradientType=0 ); /* IE6-8 */
+	
+	
+	border: solid 3px #5a1e5a;
+	border-bottom: none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+}
+a.backBtn:active{
+}
+
+
+/* Submenú comidas (Desayuno, Comida, Cena, Snacks) */
+ul.alimentos-menu {
+	float: left;
+	width: 195px;
+	margin: 0; padding: 15px; border: 0;
+	list-style: none;
+}
+ul.alimentos-menu li{
+	/*border-bottom: 1px solid #1E0A1D;
+    border-top: 1px solid #472c45;
+    font-size: 1.15em;*/
+	margin-bottom: 12px;
+}
+
+ul.alimentos-menu h2{
+	margin: 0 0 12px 0; padding: 0; border: 0;
+	
+}
+
+ul.alimentos-menu li a{
+	display: block;
+	padding: 5px 20px 3px;
+	
+	background: #f9b61a url(../images/icon-arrow_brown.png) 170px 10px no-repeat; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(../images/icon-arrow_brown.png) 170px 10px no-repeat, url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZhZWE4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMlIiBzdG9wLWNvbG9yPSIjZjhkYjIwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNDklIiBzdG9wLWNvbG9yPSIjZWViNTI4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZjdhMDJlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UyODkxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: url(../images/icon-arrow_brown.png) 170px 10px no-repeat, -moz-linear-gradient(top,  #faea85 1%, #f8db20 3%, #eeb528 49%, #f7a02e 50%, #e28912 100%); /* FF3.6+ */
+	background: url(../images/icon-arrow_brown.png) 170px 10px no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(1%,#faea85), color-stop(3%,#f8db20), color-stop(49%,#eeb528), color-stop(50%,#f7a02e), color-stop(100%,#e28912)); /* Chrome,Safari4+ */
+	background: url(../images/icon-arrow_brown.png) 170px 10px no-repeat, -webkit-linear-gradient(top,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* Chrome10+,Safari5.1+ */
+	background: url(../images/icon-arrow_brown.png) 170px 10px no-repeat, -o-linear-gradient(top,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* Opera 11.10+ */
+	background: url(../images/icon-arrow_brown.png) 170px 10px no-repeat, -ms-linear-gradient(top,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* IE10+ */
+	background: url(../images/icon-arrow_brown.png) 170px 10px no-repeat, linear-gradient(to bottom,  #faea85 1%,#f8db20 3%,#eeb528 49%,#f7a02e 50%,#e28912 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#faea85', endColorstr='#e28912',GradientType=0 ); /* IE6-8 */
+	
+	
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+	
+	color: #553101;
+	letter-spacing: .92px;
+	font-weight: normal;
+	font-size: .9em;
+	font-family: 'PT Sans Narrow', sans-serif; 
+	text-shadow: 1px 1px 0px rgba(255, 229, 194, .3);
+}
+ul.alimentos-menu li a:active{
+}
+
+
+ul.alimentos-menu .desayuno{
+	margin-bottom: 20px;
+}
+
+
+ul.alimentos-menu .cena h2{
+	margin-bottom: 20px;
+}
+ul.alimentos-menu .cena{
+	margin-bottom: 41px;
+}
+
+
+
+ul.alimentos-menu .snacks h2{
+	margin-bottom: 25px;
+}
+
+
+
+
+
+/* Slider */
+.alimentos-slider{
+	position: relative;
+	width: 200%;
+	height: 395px;
+}
+
+/* Alimentos */
+.cat-container .iscroller{
+	position: absolute; z-index: 1;
+	width: 100%; height: 318px;
+	overflow: auto;
+}
+
+/**
+ *
+ * Vertical Scrollbar
+ *
+ */
+.jspVerticalBar{
+	background: none;
+}
+ 
+.myScrollbarV,
+.jspTrack {
+	position: absolute;
+	z-index: 100;
+	width: 6px;
+	bottom: 7px; top: 0; right: 5px;
+	
+	background: rgba(38, 29, 47, .6);
+	
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-o-border-radius:4px;
+	border-radius:4px;
+}
+
+.myScrollbarV > div,
+.jspDrag {
+	position:absolute;
+	z-index:100;
+	width: 98%;
+
+	/* */
+	background: rgba(250, 205, 17, .95);
+	
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-o-border-radius:4px;
+	border-radius:4px;
+	
+	-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.15);
+	-moz-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.15);
+	-o-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.15);
+	box-shadow:inset 1px 1px 0 rgba(255,255,255,0.15);
+}
+
+
+.cat-container{
+	display: none;
+	float: left;
+	position: relative;
+	width: 225px;
+	
+}
+
+.cat-container h3{
+	padding: 7px 15px 4px;
+	border-top: 1px solid #6a3f7a;
+	border-bottom: 1px solid #453356;
+	margin: 0;
+	
+	background: #6e407c;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 1.28em;
+	letter-spacing: .04em;
+	font-weight: normal;
+	text-align: left; 
+}
+
+
+
+
+
+.cat-container .table{
+	overflow: auto;
+	position: relative;
+	margin-right: 18px;
+}
+.cat-container .table div{
+	float: left;
+	text-align: left;
+	min-height: 35px;
+}
+
+.cat-container .table div{
+	padding: 10px 8px 9px;
+}
+
+.cat-container .table .name{
+	overflow: hidden;
+	width: 58px;
+	padding-left: 8px;
+	
+	font-size: .78em;
+	font-weight: bold;
+}
+.cat-container .table .porcion{
+	background: rgba(141, 95, 155, .25);
+	width: 34px;
+	font-size: .72em;
+	text-align: left;
+}
+.cat-container .table .calcio{
+	padding: 10px 6px 9px;
+	width: 24px;
+	font-size: .72em;
+	text-align: center
+}
+.cat-container .table .calorias{
+	padding: 10px 6px 9px;
+	background: rgba(141, 95, 155, .25);
+	width: 22px;
+	
+	border: none;
+	font-size: .72em;
+	text-align: center
+}
+
+
+
+.cat-container .table-names{
+	height: 18px;
+	padding-top: 8px;
+	background: #631266 url(../images/table-food-bg.gif) left repeat-x;
+	font-size: .82em;
+	color: #facd11;
+}
+.cat-container .table-names .name,
+.cat-container .table-names .porcion,
+.cat-container .table-names .calcio,
+.cat-container .table-names .calorias{
+	padding: 0 3px;
+	background: none;
+}
+.cat-container .table-names .name{
+	padding-left: 10px;
+	margin: 0;
+}
+.cat-container .table-names .porcion{
+	margin-right: 11px;
+}
+
+
+/* Tabla nutricional */
+ul.grupo{
+	position: relative; width: 100%;
+	list-style: none;
+	margin: 0 0 20px; padding: 0; border: 0;
+}
+ul.grupo li{
+	overflow: auto;
+	position: relative;
+	/*padding: 10px 0 9px 8px;*/
+	border-bottom: 1px solid #453751;
+	border-right: 1px solid #5c496c;
+}
+
+
+.alimento{
+	/*position: absolute;*/
+	min-height: 25px;
+}
+.alimento.active{
+	background: rgba(77, 28, 77, .5);
+}
+
+.alimento .icon{
+	display: none;
+}
+
+.alimento .remove{
+	position: absolute;
+	display: none; z-index: 12;
+	right: 1px; top: 0;
+	width: 16px; height: 100%;
+	background: url(../images/remove-icn.png) no-repeat left 8px;
+}
+
+.alimento .counter{
+	position: absolute;
+	display: none; z-index: 15;
+	right: 3px; top: 6px;
+	padding: 3px 6px 2px;
+	
+	color: #000;
+	text-align: center;
+	font-size: .7em;
+	font-weight: bold;
+	
+	background: #fced04; /* Old browsers */
+	background: -moz-linear-gradient(top, #fced04 0%, #f89b22 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fced04), color-stop(100%,#f89b22)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fced04 0%,#f89b22 100%); /* IE10+ */
+	background: linear-gradient(top, #fced04 0%,#f89b22 100%); /* W3C */
+	/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fced04', endColorstr='#f89b22',GradientType=0 ); IE6-9 */
+	
+	-webkit-border-radius: 	10px;
+	-moz-border-radius: 	10px;
+	-o-border-radius: 		10px;
+	-ms-border-radius: 		10px;
+	border-radius: 			10px;
+	
+	-moz-box-shadow:		0 2px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow:		0 2px 2px rgba(0, 0, 0, 0.6);
+	box-shadow:				0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.alimento ul.submenu{
+	display: none;
+	position: absolute;
+	z-index: 100;
+	color: #000;
+	
+	list-style: none;
+	margin: 0; padding: 8px 8px; border: 0;
+	width: 170px;
+	
+	background: #fced04; /* Old browsers */
+	background: -moz-linear-gradient(top, #fced04 0%, #f89b22 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fced04), color-stop(100%,#f89b22)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fced04 0%,#f89b22 100%); /* IE10+ */
+	background: linear-gradient(top, #fced04 0%,#f89b22 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fced04', endColorstr='#f89b22',GradientType=0 ); /* IE6-9 */
+	
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	-o-border-radius: 14px;
+	-ms-border-radius: 14px;
+	border-radius: 14px;
+}
+.alimento ul.submenu li{
+	margin: 0 0 2px; padding: 12px 10px 10px; border: 0;
+	background: rgba(255, 255, 255, .82) url(../images/icon-list-add.png)  143px 9px no-repeat;
+	color: #000;
+	
+	-webkit-border-radius: 	3px;
+	-moz-border-radius: 	3px;
+	-o-border-radius: 		3px;
+	-ms-border-radius: 		3px;
+	border-radius: 			3px;
+}
+.alimento ul.submenu li.active{
+	background: rgba(200, 151, 0, .5) url(../images/icon-list-add.png)  143px 9px no-repeat;
+	color: #fff;
+}
+
+
+
+/* Categorías de Alimentos */
+#desayuno, #comida, #cena, #snacks{
+	
+}
+
+
+/*---- DESAYUNO ----*/
+/* Bebidas*/
+#desayuno .jugo .icon{
+	background: url(../images/food/frutas_jugo.png) no-repeat;
+	width: 66px; height: 52px;
+}
+
+#desayuno .leche .icon{
+	background: url(../images/food/lacteos_entera.png) no-repeat;
+	width: 40px; height: 77px;
+}
+
+
+/* frutas */
+#desayuno .naranja .icon{
+	background: url(../images/food/frutas_0.png) no-repeat;
+	width: 58px; height: 50px;
+}
+
+
+#desayuno .chabacano .icon{
+	background: url(../images/food/frutas_chabacanos.png) no-repeat;
+	width: 62px; height: 34px;
+}
+
+
+#desayuno .toronja .icon{
+	background: url(../images/food/frutas_toronja.png) no-repeat;
+	width: 59px; height: 51px;
+}
+
+
+#desayuno .higo .icon{
+	background: url(../images/food/frutas_2.png) no-repeat;
+	width: 49px; height: 41px;
+}
+
+
+#desayuno .papaya .icon{
+	background: url(../images/food/desayuno_papaya.png) no-repeat;
+	width: 64px; height: 38px;
+}
+
+
+
+#desayuno .sandia .icon{
+	background: url(../images/food/desayuno_sandia.png) no-repeat;
+	width: 55px; height: 40px;
+}
+
+
+/* Plato Fuerte */
+#desayuno .huevo .icon{
+	background: url(../images/food/desayuno_huevos.png) no-repeat;
+	width: 51px; height: 44px;
+}
+
+#desayuno .jamon .icon{
+	background: url(../images/food/desayuno_jamon.png) no-repeat;
+	width: 45px; height: 44px;
+}
+
+#desayuno .tocino .icon{
+	background: url(../images/food/desayuno_tocino.png) no-repeat;
+	width: 50px; height: 38px;
+}
+
+#desayuno .chilaquiles .icon{
+	background: url(../images/food/desayuno_chilaquiles.png) no-repeat;
+	width: 61px; height: 39px;
+}
+
+#desayuno .enchiladas .icon{
+	background: url(../images/food/desayuno_enchiladas.png) no-repeat;
+	width: 72px; height: 35px;
+}
+
+#desayuno .sopes .icon{
+	background: url(../images/food/desayuno_sopes.png) no-repeat;
+	width: 69px; height: 27px;
+}
+
+#desayuno .waffles .icon{
+	background: url(../images/food/desayuno_waffles.png) no-repeat;
+	width: 66px; height: 31px;
+}
+
+#desayuno .salchichas .icon{
+	background: url(../images/food/desayuno_salchichas.png) no-repeat;
+	width: 63px; height: 39px;
+}
+
+#desayuno .cereal .icon{
+	background: url(../images/food/desayuno_cereal.png) no-repeat;
+	width: 55px; height: 38px;
+}
+
+
+/* Otros */
+#desayuno .queso .icon{
+	background: url(../images/food/lacteos_queso.png) no-repeat;
+	width: 66px; height: 46px;
+}
+
+#desayuno .yogurt .icon{
+	background: url(../images/food/lacteos_yogurt.png) no-repeat;
+	width: 46px; height: 40px;
+}
+
+
+
+
+
+
+/*---- COMIDA ----*/
+/* Sopas, Arroz y Pasta */
+#comida .sopa .icon{
+	background: url(../images/food/panes_pasta.png) no-repeat;
+	width: 50px; height: 30px;
+}
+
+#comida .arroz .icon{
+	background: url(../images/food/panes_arroz.png) no-repeat;
+	width: 40px; height: 31px;
+}
+
+#comida .spaguetti .icon{
+	background: url(../images/food/panes_spaguetti.png) no-repeat;
+	width: 68px; height: 28px;
+}
+
+
+/* Ensaladas y Verduras */
+#comida .ensalada .icon{
+	background: url(../images/food/comida_ensalada.png) no-repeat;
+	width: 63px; height: 39px;
+}
+
+#comida .brocoli .icon{
+	background: url(../images/food/verduras_brocoli.png) no-repeat;
+	width: 49px; height: 38px;
+}
+
+#comida .espinaca .icon{
+	background: url(../images/food/verduras_espinacas.png) no-repeat;
+	width: 52px; height: 54px;
+}
+
+#comida .acelga .icon{
+	background: url(../images/food/verduras_acelgas.png) no-repeat;
+	width: 83px; height: 45px;
+}
+
+#comida .betabel .icon{
+	background: url(../images/food/verduras_betabel.png) no-repeat;
+	width: 37px; height: 49px;
+}
+
+#comida .apio .icon{
+	background: url(../images/food/verduras_apio.png) no-repeat;
+	width: 57px; height: 52px;
+}
+
+
+#comida .frijol .icon{
+	background: url(../images/food/verduras_frijol.png) no-repeat;
+	width: 57px; height: 30px;
+}
+
+#comida .garbanzo .icon{
+	background: url(../images/food/verduras_garbanzos.png) no-repeat;
+	width: 62px; height: 21px;
+}
+
+#comida .lechuga .icon{
+	background: url(../images/food/verduras_lechuga.png) no-repeat;
+	width: 61px; height: 37px;
+}
+
+#comida .berros .icon{
+	background: url(../images/food/verduras_berros.png) no-repeat;
+	width: 57px; height: 35px;
+}
+
+#comida .col .icon{
+	background: url(../images/food/verduras_col.png) no-repeat;
+	width: 36px; height: 32px;
+}
+
+#comida .calabacita .icon{
+	background: url(../images/food/verduras_calabacitas.png) no-repeat;
+	width: 58px; height: 37px;
+}
+
+
+/* Plato Fuerte */
+#comida .pollo .icon{
+	background: url(../images/food/comida_pollo.png) no-repeat;
+	width: 59px; height: 25px;
+}
+
+#comida .carne .icon{
+	background: url(../images/food/comida_carne.png) no-repeat;
+	width: 54px; height: 30px;
+}
+
+#comida .chuleta .icon{
+	background: url(../images/food/comida_chuleta.png) no-repeat;
+	width: 58px; height: 28px;
+}
+
+#comida .hamburguesa .icon{
+	background: url(../images/food/comida_hamburguesa.png) no-repeat;
+	width: 47px; height: 36px;
+}
+
+#comida .pulpo .icon{
+	background: url(../images/food/carnes_pulpo.png) no-repeat;
+	width: 56px; height: 68px;
+}
+
+#comida .camaron .icon{
+	background: url(../images/food/carnes_camaron.png) no-repeat;
+	width: 65px; height: 45px;
+}
+
+
+#comida .sardina .icon{
+	background: url(../images/food/carnes_sardinas.png) no-repeat;
+	width: 46px; height: 41px;
+}
+
+#comida .salmon .icon{
+	background: url(../images/food/carnes_salmon.png) no-repeat;
+	width: 59px; height: 34px;
+}
+
+#comida .ostiones .icon{
+	background: url(../images/food/carnes_ostiones.png) no-repeat;
+	width: 61px; height: 30px;
+}
+
+#comida .tortilla .icon{
+	background: url(../images/food/panes_tortillas.png) no-repeat;
+	width: 91px; height: 32px;
+}
+
+
+/* Postre */
+#comida .helado .icon{
+	background: url(../images/food/lacteos_helado.png) no-repeat;
+	width: 35px; height: 48px;
+}
+
+#comida .flan .icon{
+	background: url(../images/food/lacteos_flan.png) no-repeat;
+	width: 66px; height: 27px;
+}
+
+#comida .pastel .icon{
+	background: url(../images/food/comida_pastel.png) no-repeat;
+	width: 39px; height: 38px;
+}
+
+
+
+
+
+/*---- CENA ----*/
+
+/* Pan */
+#cena .muffin .icon{
+	background: url(../images/food/panes_muffin.png) no-repeat;
+	width: 34px; height: 30px;
+}
+
+#cena .croissant .icon{
+	background: url(../images/food/panes_croissant.png) no-repeat;
+	width: 51px; height: 31px;
+}
+
+#cena .pan .icon{
+	background: url(../images/food/panes_pan.png) no-repeat;
+	width: 53px; height: 50px;
+}
+
+#cena .concha .icon{
+	background: url(../images/food/cena_concha.png) no-repeat;
+	width: 49px; height: 33px;
+}
+
+
+
+/* Plato Principal */
+#cena .sandwich .icon{
+	background: url(../images/food/cena_sandwich.png) no-repeat;
+	width: 46px; height: 45px;
+}
+
+#cena .quesadilla .icon{
+	background: url(../images/food/cena_quesadilla.png) no-repeat;
+	width: 58px; height: 47px;
+}
+
+#cena .tacos .icon{
+	background: url(../images/food/cena_tacos.png) no-repeat;
+	width: 64px; height: 49px;
+}
+
+#cena .pizza .icon{
+	background: url(../images/food/cena_pizza.png) no-repeat;
+	width: 62px; height: 37px;
+}
+
+#cena .sushi .icon{
+	background: url(../images/food/cena_sushi.png) no-repeat;
+	width: 64px; height: 41px;
+}
+
+
+
+
+
+/*---- SNACKS ----*/
+/* Entrecomidas */
+#snacks .nueces .icon{
+	background: url(../images/food/cereales_1.png) no-repeat;
+	width: 38px; height: 36px;
+}
+
+#snacks .almendras .icon{
+	background: url(../images/food/cereales_almendras.png) no-repeat;
+	width: 57px; height: 30px;
+}
+
+
+
+
+
+
+/* Instruccones */
+#instrucciones{}
+#instrucciones h2{
+	padding:0; margin: 0; border: 0;
+	margin-bottom: 5px;
+}
+#instrucciones p{
+	font-size: .9em;
+	margin: 0;
+}
+
+
+/* Drop Zone */
+.dropZone{
+	position: absolute;
+	top: 5px; left: 50%;
+	margin-left: -66px;
+	width: 133px; height: 400px;
+	overflow: hidden;
+}
+.dropZone .display,
+.factorZone .display{
+	position: relative;
+	z-index: 10;
+	margin-top: 144px;
+	
+	color: #F0C528;
+	font-size: 1.37em;
+	text-align: center;
+	font-weight: bold;
+	line-height: .8em
+}
+.dropZone .display.white,
+.factorZone .display.white{
+	color: #201126;
+}
+.dropZone .hoverFill{
+	display: none;
+	/*z-index: -8;*/
+	position: absolute;
+	top: 0;
+	
+	background: rgba(255, 255, 255, .09);
+	width: inherit; height: inherit;
+}
+.dropZone .slideFill{
+	position: absolute;
+	/*z-index: -9;*/
+	top: 400px;
+	
+	background: #fff;
+	width: inherit; height: inherit;
+}
+
+
+
+
+/* Tooltip */
+#tooltip{
+	display: none;
+	position: absolute;
+	z-index: 100;
+	color: #000;
+	
+	/* width: 184px; */
+	min-width: 220px;
+	padding: 7px 8px 5px;
+	background: #fced04; /* Old browsers */
+	background: -moz-linear-gradient(top, #fced04 0%, #f89b22 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fced04), color-stop(100%,#f89b22)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fced04 0%,#f89b22 100%); /* IE10+ */
+	background: linear-gradient(top, #fced04 0%,#f89b22 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fced04', endColorstr='#f89b22',GradientType=0 ); /* IE6-9 */
+	
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	-ms-border-radius: 12px;
+	border-radius: 12px;	
+}
+
+#tooltip h4{
+	margin: 0 0 4px;
+	border-bottom: solid 1px #dfdfdf
+}
+#tooltip p{
+	margin: 0 0 4px;
+}
+
+#tooltip .nombre{
+	font-size: 18px;
+	font-weight: bold;
+	
+	margin-bottom: 2px;
+}
+#tooltip .icon{
+	background: transparent no-repeat;
+	position: absolute;
+	width: '50px'; height: 50px;
+	top: -15px;
+}
+
+#tooltip .wrap{
+	background: #fff;
+	border-top: 2px solid #000;
+	padding: 7px 7px 3px;
+	overflow: auto;
+	
+	-webkit-border-radius: 	4px;
+	-moz-border-radius: 	4px;
+	-o-border-radius: 		4px;
+	-ms-border-radius: 		4px;
+	border-radius: 			4px;
+}
+
+
+#tooltip .aporte,
+#tooltip .porciones{
+	float: left;
+	min-width: 80px;
+	max-width: 125px;
+	text-align: left;
+	font-size: 13px;
+	color: #000;
+}
+
+
+#tooltip .aporte{
+	padding-right: 10px;
+}
+#tooltip .porciones{
+	padding-left: 10px;
+	border-left: solid 1px #dadada;
+}

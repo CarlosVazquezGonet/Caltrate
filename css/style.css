@@ -1,0 +1,1001 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #7a58af;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.3em;
+}
+p.webfont {
+	letter-spacing: 1px;
+	font-weight: bold;
+	font-size: 1.85em;
+	font-family: 'PT Sans Narrow', sans-serif;
+	
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .34); 
+}
+p.head {
+	text-align: center;
+}
+
+*:not(input):not(textarea):not(select), 
+	input[type=image], 
+	input[type=file], 
+	input[type=submit], 
+	input[type=button], 
+	input[type=reset] {
+	
+	-webkit-user-select: none;
+}
+
+.ui-loader,
+.ui-btn-inner {
+	display: none;
+}
+
+#wrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 654px;
+	height: 946px;
+	overflow: hidden;
+	background:#8c6dbd;
+}
+header {
+	width: 654px;
+	height: 160px;
+	position: relative;
+	background: url(../images/header.png) no-repeat center top;
+}
+header h1.title {
+	margin: 0;
+	padding: 0;
+	width: 180px;
+	height: 115px;
+	position: absolute;
+	top: -8px;
+	left: 10px;
+	text-indent: -9000px;
+	background: url(../images/caltrate.png) no-repeat center top;
+}
+header h1.title a {
+	width: 180px;
+	height: 115px;
+	float: left;
+}
+/*    CONTENT    */
+#container{
+}
+
+#slider_holder{
+	width: 4608px;
+}
+.content {
+	float: left;
+	position: relative;
+	
+	padding: 0 50px;
+	height: 692px;
+	width: 554px;
+}
+#progress {
+	margin: 0 auto;
+	position: absolute;
+	top: 320px;
+	left: 284px;
+	width: 200px;
+	height: 80px;
+	-webkit-border-radius: 10px;
+	background-color: rgba(0,0,0,.7);
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 80px;
+}
+.hidden {
+	display: none;
+}
+
+
+
+
+.nav-holder{
+	clear: both;
+	position: absolute;
+	height: 50px; width: 604px;
+	margin: 0 25px;
+	bottom: 45px; left: 0;
+}
+.nav-holder a.nav {
+	width: 275px; height: 45px;
+	background-position: left top;
+}
+.nav-holder a.next.nav {
+	position: absolute; right: 0;
+	background: url(../images/btn-siguiente.png) no-repeat center top;
+}
+.nav-holder a.back.nav {
+	position: absolute;
+	left: 0;
+	background: url(../images/btn-back.png) no-repeat center top;
+}
+
+
+/*------------------------------------------------*/
+/*-------------------  INICIO  -------------------*/
+
+#inicio {
+	position: relative;
+	background: url(../images/bg-cover.png) no-repeat center 90px;
+}
+
+#inicio h2 {
+	margin: 0;
+	padding: 0 0 50px;
+	background: url(../images/main-title-ornament.png) no-repeat center 65px;
+	
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 3.4em;
+	font-weight: bold;
+	line-height: 1.1em;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+#inicio h3 {
+	position: absolute;
+	z-index: 10;
+	display: inline-block;
+	
+	left: 140px; top: 465px;
+	
+	font-size: 4.5em;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+#inicio-calcular a {
+	left: 50%;
+	margin-left: -137px;
+	
+	text-indent: -9000px;
+	background: url(../images/btn-calcular-calcio.png) no-repeat center top;
+}
+
+
+
+
+
+/*------------------------------------------------*/
+/*--------------------  SEXO  --------------------*/
+#sexo h2.title {
+	margin: 25px 0 20px;
+	font-size: 2em;
+	text-transform: uppercase;
+	text-align: center;
+}
+#sexo-seleccionar {
+	margin: 0 auto;
+	margin-top: 70px;
+	width: 412px;
+	height: 460px;
+}
+#sexo-fem, 
+#sexo-masc {
+	position: absolute;
+	left: 50%;
+	width: 206px;
+	
+	transition: transform 1s;
+	-moz-transition: -moz-transform 1s;
+	-webkit-transition: -webkit-transform 1s;
+	-o-transition: -o-transform 1s;
+	
+	opacity: .5;
+	cursor: pointer;
+}
+#sexo-fem {
+	margin-left: -230px;
+}
+#sexo-masc {
+	margin-left: 20px;
+}
+#sexo .current{
+	/*opacity: 1;
+	transform: scale(1);
+	-ms-transform: scale(1);
+	-webkit-transform: scale(1);
+	-o-transform: scale(1);
+	-moz-transform: scale(1);*/
+}
+#sexo .noncurrent{
+	/*opacity: .5;
+	transform: scale(.6);
+	-ms-transform: scale(.6);
+	-webkit-transform: scale(.6);
+	-o-transform: scale(.6);
+	-moz-transform: scale(.6);*/
+}
+
+#sexo .age_holder {
+	display: none;
+	position: absolute;
+	top: 50%; margin-top: -20px;
+	width: 225px;
+	padding: 20px 12px 17px;
+	
+	font-size: 1.2em;
+	
+	background: rgba(0, 0, 0, .4);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#sexo .age_holder select{
+	margin-left: 10px;
+	width: 160px;
+	
+	font-size: .7em;
+}
+
+
+
+#sexo-comenzar a.next.nav {
+}
+#sexo-comenzar a.back.nav {
+}
+
+
+
+
+/* Pasos */
+.pasos-siguiente {
+}
+
+.pasos-siguiente a.next {
+	width: 328px;
+	height: 48px;
+	background: url(../images/btn-siguiente.png) no-repeat center top;
+}
+
+/* Paso 01 */
+#paso01-info {
+	padding: 0 34px;
+}
+
+#paso01-info h2.title {
+	margin: 0 0 20px;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+#paso01-info h3 {
+	margin: 0;
+	font-size: 1.8em;
+	text-transform: uppercase;
+}
+
+#paso01-form {
+	margin-top: 80px;
+}
+
+#paso01-silueta {
+	margin-top: 36px;
+	width: 210px;
+	height: 450px;
+	float: left;
+	background-size: 200px 450px;
+	background: transparent url('../images/silueta01.png') no-repeat left top;
+}
+
+form#form01 {
+	padding: 20px 14px;
+	width: 362px;
+	float: left;
+	background-color: rgba(103, 70, 106, 0.8);
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+	font-size: .75em;
+}
+
+form#form01 label {
+	padding-right: 18px;
+	width: 80px;
+	text-align: right;
+	display: block;
+	float: left;
+}
+
+form#form01 fieldset {
+	padding: 56px 0;
+	border: none;
+}
+
+form#form01 select {
+	width: 242px;
+}
+
+#paso01-form .pasos-siguiente {
+	margin: 90px 0 0 62px;
+	float: left;
+	clear: none;
+}
+
+
+
+
+/*---------------------------------------------------------*/
+/*---  Paso 02 (Drag and Drop Interface) Ver: drag.css  ---*/
+
+#drop-masc{
+	background: url(../images/silueta-hombre-0_mask.png) no-repeat center top;
+}
+#drop-fem{
+	background: url(../images/silueta-mujer-0_mask.png) no-repeat center top;
+}
+
+#drop-fem .mask,
+#factor-fem .mask,
+#final-fem .mask,
+#drop-masc .mask,
+#factor-masc .mask,
+#final-masc .mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 133px;
+	height: 400px;
+}
+
+#drop-fem .mask {
+	background: url(../images/masc-femenino-01.png) no-repeat center top;
+}
+
+#drop-masc .mask {
+	background: url(../images/masc-masculino-01.png) no-repeat center top;
+}
+
+#factor-fem .mask {
+	background: url(../images/masc-femenino-02.png) no-repeat center top;
+}
+
+#factor-masc .mask {
+	background: url(../images/masc-masculino-02.png) no-repeat center top;
+}
+
+#final-fem .mask {
+	background: url(../images/masc-femenino-03.png) no-repeat center top;
+}
+
+#final-masc .mask {
+	background: url(../images/masc-masculino-03.png) no-repeat center top;
+}
+
+#paso02-info h2.title {
+	margin: 0 0;
+	padding: 0 34px;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+#paso02-info p {
+	margin-top: 20px;
+}
+
+
+#paso02-drag {
+	margin: 42px 0 18px 0;
+	position: relative;
+	left: -25px;
+	width: 604px;
+	height: 425px;
+}
+
+#paso02 .nav-holder {
+	bottom: 48px;
+}
+
+
+
+
+
+/*---------------------------------------------------------*/
+/*---------------   Paso 03 (factores de riesgo)  ---------*/
+/*---------------------------------------------------------*/
+#paso03-info h2.title {}
+#paso03-info {}
+
+#paso03-info h2.title {
+	margin: 0 0 20px;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+#paso03-info h3 {
+	margin: 0;
+	font-size: 1.8em;
+	text-transform: uppercase;
+}
+
+
+
+/* Ventanas informativas */
+#factores-holder {
+	display: none;
+    position: absolute;
+    left: 265px;
+	z-index: 10;
+	
+    width: 338px;
+    height: 350px;
+    margin: 55px 0 0;
+	
+	border-radius: 5px 5px 5px 5px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#factores-holder .window {
+	display: none;
+	position: absolute;
+	left: -20px;
+	color: #000;
+	
+	/* width: 184px; */
+	width: 240px;
+	padding: 7px 8px 5px;
+	background: #fced04; /* Old browsers */
+	background: -moz-linear-gradient(top, #fced04 0%, #f89b22 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fced04), color-stop(100%,#f89b22)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fced04 0%,#f89b22 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fced04 0%,#f89b22 100%); /* IE10+ */
+	background: linear-gradient(top, #fced04 0%,#f89b22 100%); /* W3C */
+	/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fced04', endColorstr='#f89b22',GradientType=0 ); IE6-9 */
+	
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	-ms-border-radius: 12px;
+	border-radius: 12px;
+	
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.45);
+}
+#factores-holder h4{
+	margin: 0 0 4px;
+	padding-left: 4px;
+	border-bottom: solid 1px #dfdfdf
+}
+#factores-holder p{
+	margin: 0 0 4px;
+}
+
+#factores-holder .nombre{
+	font-size: 18px;
+	font-weight: bold;
+	
+	margin-bottom: 2px;
+}
+#factores-holder .icon{
+	background: transparent no-repeat;
+	position: absolute;
+	width: '50px'; height: 50px;
+	top: -15px;
+}
+
+#factores-holder .wrap{
+	background: #fff;
+	border-top: 2px solid #000;
+	padding: 7px 7px 3px;
+	overflow: auto;
+	
+	-webkit-border-radius: 	4px;
+	-moz-border-radius: 	4px;
+	-o-border-radius: 		4px;
+	-ms-border-radius: 		4px;
+	border-radius: 			4px;
+}
+
+
+#factores-holder .alcohol{
+	 top: 65px; left: 44px;
+}
+#factores-holder .alcohol .icon{
+	width: 46px; height: 42px;
+	left: 85px; top: -12px;
+	background: url(../images/riesgo-thumb-alcohol.png) no-repeat;
+}
+
+#factores-holder .cigarro{
+	top: 105px; left: 44px;
+}
+#factores-holder .cigarro .icon{
+	width: 61px; height: 41px;
+	left: 80px; top: -10px;
+	background: url(../images/riesgo-thumb-cigarro.png) no-repeat;
+}
+
+#factores-holder .ejercicio{
+	top: 87px; left: 44px;
+}
+#factores-holder .ejercicio .icon{
+	width: 61px; height: 42px;
+	left: 88px;
+	background: url(../images/riesgo-thumb-ejercicio.png) no-repeat;
+}
+
+#factores-holder .cafe{
+	top: 115px; left: 44px;
+}
+#factores-holder .cafe .icon{
+	left: 76px; top: -2px;
+	width: 48px; height: 29px;
+	background: url(../images/riesgo-thumb-cafe.png) no-repeat;
+}
+
+
+
+/* Silueta, porcentajes y factores de riesgo */
+#paso03-silueta-holder {
+	padding: 20px 0 0 30px;
+	width: 133px;
+	height: 400px;
+	float: left;
+	position: relative;
+}
+
+.factorZone {
+	width: 133px;
+	height: 400px;
+	position: absolute;
+	overflow: hidden;
+}
+
+.factorZone .factorDisplay{
+	position: absolute;
+	/*z-index: -8;*/
+	opacity: .7;
+	
+	width: 133px;
+	height: 400px;
+	
+	-moz-transform:    rotate(180deg);
+    -o-transform:      rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform:         rotate(180deg);
+}
+.factorZone .factorDisplay .alcohol{
+	display: none;
+	position: relative;
+	height: 25%;
+	background: #376072;
+}
+.factorZone .factorDisplay .cigarro{
+	display: none;
+	position: relative;
+	height: 25%;
+	background: #DBAA3C;
+}
+.factorZone .factorDisplay .ejercicio{
+	display: none;
+	position: relative;
+	height: 25%;
+	background: #719F3C;
+}
+.factorZone .factorDisplay .cafe{
+	display: none;
+	position: relative;
+	height: 25%;
+	background: #816034;
+}
+
+.factorZone .slideFill{
+	position: absolute;
+	/*z-index: -9;*/
+	top: 400px;
+	background: #fff;
+	width: inherit;
+	height: inherit;
+}
+
+
+#factor-masc {
+	background: url(../images/silueta-hombre-0_mask.png) no-repeat center top;
+}
+#factor-fem {
+	background: url(../images/silueta-mujer-0_mask.png) no-repeat center top;
+}
+
+#drop-masc .display,
+#factor-masc .display,
+#final-masc .display{
+	margin-top: 155px;
+}
+#drop-fem .display,
+#factor-fem .display,
+#final-fem .display{
+	left: -17px;
+}
+
+.display .kcal{
+	font-size: .68em;
+}
+
+
+
+/* Iconos */
+#paso03 .col-right{
+	float: none;
+	margin: 0 0 0 215px;
+	padding: 15px 0 0 0;
+}
+#paso03-graficos{
+	margin-top: 25px;
+}
+
+#paso03-icons {
+	float: left;
+	width: 310px;
+	padding: 15px 14px 20px;
+	margin: 0 0 6px 0;
+	
+	background-color: rgba(0, 0, 0, 0.8);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+#paso03-icons #factores-riesgo {
+	list-style: none;
+	margin: 0; padding: 0 15px;
+}
+
+#factores-riesgo a.info{
+	display: block;
+	position: absolute;
+	left: 8px; top: 80px;
+	width: 22px; height: 22px;
+	background: url(../images/icon-info.png) center no-repeat;
+}
+
+#paso03-icons #factores-riesgo li {
+	float: left;
+	position: relative;
+	width: 120px; height: 30px;
+	padding: 110px 0 0;
+	margin: 0 20px 20px;
+	
+	cursor: default;
+	
+	
+	color: #F0C528;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#paso03-icons #factores-riesgo li#riesgo01 {
+	background: url(../images/riesgo01.png) no-repeat left top;
+	margin-left: 0px
+}
+#paso03-icons #factores-riesgo li#riesgo02 {
+	background: url(../images/riesgo02.png) no-repeat left top;
+	padding: 116px 0 0; margin-right: 0px
+}
+#paso03-icons #factores-riesgo li#riesgo03 {
+	background: url(../images/riesgo03.png) no-repeat left top;
+	margin-bottom: 10px; margin-left: 0px
+}
+#paso03-icons #factores-riesgo li#riesgo04 {
+	background: url(../images/riesgo04.png) no-repeat left top;
+	margin-bottom: 10px; margin-right: 0px
+}
+
+#paso03-icons #factores-riesgo li#riesgo01.checked,
+#paso03-icons #factores-riesgo li#riesgo02.checked,
+#paso03-icons #factores-riesgo li#riesgo03.checked,
+#paso03-icons #factores-riesgo li#riesgo04.checked {
+	background-position: -120px top;
+}
+
+
+
+
+/* Notas */
+#paso03 p.note {
+	margin: 0 0 4px;
+	font-size: 1em;
+	color: #CFBFD1;
+	text-align: center;
+}
+
+
+
+/* Navegación*/
+#paso03 .nav-holder {
+}
+#paso03 a.next {
+}
+
+
+
+
+
+/*---------------------------------------------------------*/
+/*---------------------  RESULTADOS  ----------------------*/
+#resultados h2{
+	margin: 35px 0 20px 15px;
+	background: url(../images/main-title-ornament.png) no-repeat center 65px;
+	
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 3em;
+	font-weight: bold;
+	line-height: 1.1em;
+	text-transform: uppercase;
+	text-align: left;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* LIGHTBOX */
+.resultado_lightbox{
+	background: rgba(0,0,0,0.5);
+	text-align:center;
+	z-index: 100;
+	display: none;
+	position: absolute;
+	top: 0;
+	width:100%;
+	height:100%;
+}
+.resultado_lightbox .close{
+	display: block;
+	width: 30px; height: 30px;
+	position: absolute;
+	top: 167px; right: 7px;
+	background: url(../images/btn-resultados-close.png) no-repeat;
+}
+
+
+.resultado_lightbox .prod-details{
+	display: none;
+	width:100%;
+	height:auto;
+}
+
+
+.temp-resultdo{
+	display: block;
+	position: relative;
+	
+	top: -10px;
+	width: 213px; height: 42px;
+	margin:0 auto;
+	background: url('../images/TEMP-resultado-vutton.png') no-repeat;
+}
+
+
+
+
+#resultados-info {
+	padding: 0;
+}
+
+#resultados-silueta {
+	float: left;
+	position: relative;
+	padding: 15px 0 0 40px;
+	width: 133px; height: 400px;
+}
+#final-fem {
+	background: url('../images/silueta-mujer-0_mask.png') no-repeat center top;
+}
+#final-masc {
+	background: url('../images/silueta-hombre-0_mask.png') no-repeat center top;
+}
+
+
+#resultados .info-holder {
+	position: relative;
+	top: -15px;
+	float: right;
+	width: 55%;
+	margin-right: 10px;
+}
+#resultados .info-holder p{
+	margin: 8px 0;
+}
+#resultados .info-holder p.note{
+	color: #b2a4b3;
+	font-size: .85em;
+	margin: 0 0 1px 0; padding: 0 0 0 15px;
+}
+
+#resultados .info-holder h2{
+	font-size: 1.8em;
+	margin: 0 0 ;
+    text-transform: uppercase;
+}
+
+#resultados .info-holder .percent{
+	display: block;
+	margin: 15px 0 0;
+    padding-left: 4px;
+	
+	color: #FCEC05;
+    font-size: 2em;
+	line-height: .5em;
+}
+#resultados .info-holder .kcal{
+	font-size: .58em;
+}
+#resultados .info-holder .note{
+	color: #fff;
+	font-size: .7em;
+}
+
+#resultados-recomendacion{
+	margin-top: 20px;
+	padding-top: 25px;
+	border-top: 1px solid #fff;
+	
+	font-size: .85em;
+}
+
+#resultados-recomendacion h3{
+	font-size: 1.6em;
+	margin: 0 0 8px;
+	color: #FCEC05;
+}
+
+#resultados-recomendacion ul.minerales{
+	margin: 0 0 30px 15px; padding: 0; border: 0;
+	font-size: .9em;
+}
+#resultados-recomendacion ul.minerales li{
+	margin: 0 0 7px 15px;
+	line-height: 1.22em
+}
+
+
+
+
+#resultados .nav-holder{
+}
+#resultados a.next{
+}
+
+.nav-holder a.nav:active {
+	background-position: left bottom;
+}
+
+
+
+
+/* Productos */
+.prod-container{
+	display: none;
+}
+
+#prod_caltrateD .resultados-producto{
+	width: 180px; height: 234px;
+	margin: 10px 0 0 20%;
+	background: url('../images/caltrate-600-D_final.png') no-repeat center top;
+}
+#prod_caltrateM .resultados-producto{
+	width: 190px; height: 234px;
+	margin: 10px 0 0 20%;
+	background: url('../images/caltrate-600-Mplus_final.png') no-repeat center top;
+}
+#prod_caltratefamily .resultados-producto{
+	width: 343px; height: 212px;
+	margin: 30px 0 0 -15px;
+	background: url('../images/caltrate_familia_final.png') no-repeat center top;
+}
+
+
+
+
+
+
+/* ENDING */
+#ending a.next{
+	background: url('../images/btn-restart.png') left top no-repeat;
+}
+
+
+
+
+
+
+/*---------------------------------------------------------*/
+/*-----------------------  FOOTER  ------------------------*/
+footer {
+	position: absolute;
+	bottom: 35px;
+	width: 584px;
+	height: 62px;
+	margin: 0 35px;
+	padding: 15px 0 0;
+	
+	border-top: solid 1px rgba(255, 255, 255, .25);
+}
+
+footer .content-holder{
+	display: none;
+}
+footer .info {
+	margin: 0 auto 5px;
+	padding: 0;
+	width: 460px;
+	min-height: 28px;
+	line-height: 1.3em;
+	font-size: .75em;
+}
+
+footer .ending {
+	text-align: center;
+}
+footer .ending p{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+footer .ending strong{
+	display: block;
+	font-size: 18px;
+	margin: 6px 0 5px;
+}
+
+
+
+footer #caltrate-url {
+	text-align: center;
+}
+footer #caltrate-url a {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 1.32em;
+	font-weight: bold;
+}
+
+
+footer .genero{
+	text-align: center;
+}
+
+footer .trademark{
+	position: absolute;
+	right: 10px;
+	bottom: -22px;
+}
+
+
+
+footer .reg-container{
+	text-align: center;
+	margin-top: 5px;
+}
+
+footer .reg-container .registro{
+	display: none;
+	font-size: 12px;
+}
+footer .reg-container .registro.caltrateFamily{
+	text-align: left;
+}
+
